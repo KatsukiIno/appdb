@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Your Page Title</title>
+</head>
+<body>
+    <h1>履修選択サポート</h1>
+    <div class="content">
+      <p>学年:</p>
+      <select name="grade" required>
+        <option value="">--</option>
+        <option value="1">1年</option>
+        <option value="2">2年</option>
+        <option value="3">3年</option>
+        <option value="4">4年</option>
+      </select>
+      <p>学科:</p>
+      <select name="department" required>
+        <option value="">--</option>
+        <option value="哲学科">哲学科</option>
+        <option value="史学科">史学科</option>
+        <option value="国文学科">国文学科</option>
+        <option value="中国語中国文化学科">中国語中国文化学科</option>
+        <option value="英文学科">英文学科</option>
+        <option value="ドイツ文学科">ドイツ文学科</option>
+        <option value="社会学科">社会学科</option>
+        <option value="社会福祉学科">社会福祉学科</option>
+        <option value="教育学科">教育学科</option>
+        <option value="体育学科">体育学科</option>
+        <option value="心理学科">心理学科</option>
+        <option value="地理学科">地理学科</option>
+        <option value="地球科学科">地球科学科</option>
+        <option value="数学科">数学科</option>
+        <option value="情報科学科">情報科学科</option>
+        <option value="物理学科">物理学科</option>
+        <option value="生命科学科">生命科学科</option>
+        <option value="化学科">化学化</option>
+      </select>
+      <p>半期:</p>
+      <select name="halfPeriod" required>
+        <option value="">--</option>
+        <option value="前期">前期</option>
+        <option value="後期">後期</option>
+        <option value="集中">集中講義</option>
+      </select>
+    </div>
+    <table border="5">
+      <tr>
+        <th></th>
+        <th>月曜</th>
+        <th>火曜</th>
+        <th>水曜</th>
+        <th>木曜</th>
+        <th>金曜</th>
+      </tr>
+      <tr>
+        <td>1限</td>
+        <td id="月曜-1">
+        </td>
+        <td id="火曜-1">
+        </td>
+        <td id="水曜-1">
+        </td>
+        <td id="木曜-1">
+        </td>
+        <td id="金曜-1">
+        </td>
+      </tr>
+      <tr>
+        <td>2限</td>
+        <td id="月曜-2">
+        </td>
+        <td id="火曜-2">
+        </td>
+        <td id="水曜-2">
+        </td>
+        <td id="木曜-2">
+        </td>
+        <td id="金曜-2">
+        </td>
+      </tr>
+      <tr>
+        <td>3限</td>
+        <td id="月曜-3">
+        </td>
+        <td id="火曜-3">
+        </td>
+        <td id="水曜-3">
+        </td>
+        <td id="木曜-3">
+        </td>
+        <td id="金曜-3">
+        </td>
+      </tr>
+      <tr>
+        <td>4限</td>
+        <td id="月曜-4">
+        </td>
+        <td id="火曜-4">
+        </td>
+        <td id="水曜-4">
+        </td>
+        <td id="木曜-4">
+        </td>
+        <td id="金曜-4">
+        </td>
+      </tr>
+      <tr>
+        <td>5限</td>
+        <td id="月曜-5">
+        </td>
+        <td id="火曜-5">
+        </td>
+        <td id="水曜-5">
+        </td>
+        <td id="木曜-5">
+        </td>
+        <td id="金曜-5">
+        </td>
+      </tr>
+    </table>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

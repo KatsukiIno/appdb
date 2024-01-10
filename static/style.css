@@ -1,0 +1,8 @@
+.content {
+  display: flex;
+}
+
+.content p {
+  display: inline-block;
+  margin: 0; /* デフォルトのマージンを削除 */
+}
