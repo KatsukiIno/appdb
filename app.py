@@ -3,13 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-# SQLiteデータベースの設定
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///courses.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-# 必修科目のテーブル
 class RequiredCourse(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     grade = db.Column(db.String(255))
@@ -20,7 +18,6 @@ class RequiredCourse(db.Model):
     course_name = db.Column(db.String(255))
     is_required = db.Column(db.Boolean)
 
-# 選択必修科目のテーブル
 class ElectiveRequiredCourse(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     grade = db.Column(db.String(255))
@@ -31,7 +28,6 @@ class ElectiveRequiredCourse(db.Model):
     course_name = db.Column(db.String(255))
     is_required = db.Column(db.Boolean)
 
-# 総合科目のテーブル
 class GeneralCourse(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     half_period = db.Column(db.String(255))
@@ -40,12 +36,9 @@ class GeneralCourse(db.Model):
     course_name = db.Column(db.String(255))
     is_required = db.Column(db.Boolean)
 
-# アプリケーションコンテキスト内でデータベース初期化と初期データ追加
 with app.app_context():
-    # データベース初期化
     db.create_all()
 
-    # 初期データが存在しない場合のみ追加
     if RequiredCourse.query.count() == 0:
         initial_required_courses = [
             {'grade': '1', 'department': '哲学科', 'half_period': '前期', 'day_of_week': '月曜', 'time_slot': '2', 'course_name': '美学基礎購読１', 'is_required': True},
@@ -169,7 +162,6 @@ with app.app_context():
             {'grade': '1', 'department': '哲学科', 'half_period': '前期', 'day_of_week': '月曜', 'time_slot': '1', 'course_name': '選択必修1', 'is_required': False},
             {'grade': '1', 'department': '哲学科', 'half_period': '前期', 'day_of_week': '月曜', 'time_slot': '2', 'course_name': '選択必修1', 'is_required': False},
             {'grade': '1', 'department': '哲学科', 'half_period': '前期', 'day_of_week': '火曜', 'time_slot': '2', 'course_name': '選択必修2', 'is_required': False},
-            # 他の初期データも同様に追加
         ]
 
         for course_data in initial_elective_required_courses:
@@ -180,7 +172,6 @@ with app.app_context():
         initial_general_courses = [
             {'half_period': '前期', 'day_of_week': '水曜', 'time_slot': '3', 'course_name': '総合科目1', 'is_required': False},
             {'half_period': '前期', 'day_of_week': '木曜', 'time_slot': '4', 'course_name': '総合科目2', 'is_required': False},
-            # 他の初期データも同様に追加
         ]
 
         for course_data in initial_general_courses:
@@ -189,13 +180,10 @@ with app.app_context():
 
     db.session.commit()
 
-# 例: HTML ファイルの指定
 @app.route('/')
 def index():
     return render_template('index.html')
 
-
-# クライアントからの授業情報取得リクエストを処理
 @app.route('/get_courses', methods=['POST'])
 def get_courses():
     grade = request.form.get('grade')
@@ -203,18 +191,16 @@ def get_courses():
     half_period = request.form.get('halfPeriod')
     print(f"Received request with grade={grade}, department={department}, half_period={half_period}")
 
-    # データベースから該当する授業情報を取得
     courses1 = RequiredCourse.query.filter_by(grade=grade, department=department, half_period=half_period).all()
     courses2 = ElectiveRequiredCourse.query.filter_by(grade=grade, department=department, half_period=half_period).all()
     courses3 = GeneralCourse.query.filter_by(half_period=half_period).all()
 
-    # 結果をリストに変換
     courses_list = [
         {'day_of_week': course.day_of_week, 'time_slot': course.time_slot, 'course_name': course.course_name, 'is_required': course.is_required}
         for course in courses1 + courses2 + courses3
     ]
 
-    return jsonify({'courses': courses_list})  # レスポンスの構造を修正
+    return jsonify({'courses': courses_list}) 
 
 
 if __name__ == '__main__':
