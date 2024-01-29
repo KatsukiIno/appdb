@@ -7,122 +7,264 @@
     <link rel="stylesheet" href="../static/style.css">
     <title>Your Page Title</title>
 </head>
+<header>
+  <h1>履修選択サポート</h1>
+</header>
 <body>
-    <h1>履修選択サポート</h1>
-    <div class="content">
-      <p>学年:</p>
-      <select name="grade" required>
-        <option value="">--</option>
-        <option value="1">1年</option>
-        <option value="2">2年</option>
-        <option value="3">3年</option>
-        <option value="4">4年</option>
-      </select>
-      <p>学科:</p>
-      <select name="department" required>
-        <option value="">--</option>
-        <option value="哲学科">哲学科</option>
-        <option value="史学科">史学科</option>
-        <option value="国文学科">国文学科</option>
-        <option value="中国語中国文化学科">中国語中国文化学科</option>
-        <option value="英文学科">英文学科</option>
-        <option value="ドイツ文学科">ドイツ文学科</option>
-        <option value="社会学科">社会学科</option>
-        <option value="社会福祉学科">社会福祉学科</option>
-        <option value="教育学科">教育学科</option>
-        <option value="体育学科">体育学科</option>
-        <option value="心理学科">心理学科</option>
-        <option value="地理学科">地理学科</option>
-        <option value="地球科学科">地球科学科</option>
-        <option value="数学科">数学科</option>
-        <option value="情報科学科">情報科学科</option>
-        <option value="物理学科">物理学科</option>
-        <option value="生命科学科">生命科学科</option>
-        <option value="化学科">化学化</option>
-      </select>
-      <p>半期:</p>
-      <select name="halfPeriod" required>
-        <option value="">--</option>
-        <option value="前期">前期</option>
-        <option value="後期">後期</option>
-        <option value="集中">集中講義</option>
-      </select>
+  <h2>授業選択表</h2>
+  <div class="content">
+    <p>学年:</p>
+    <select name="grade" required>
+      <option value="">--</option>
+      <option value="1">1年</option>
+      <option value="2">2年</option>
+      <option value="3">3年</option>
+      <option value="4">4年</option>
+    </select>
+    <p>学科:</p>
+    <select name="department" required>
+      <option value="">--</option>
+      <option value="哲学科">哲学科</option>
+      <option value="史学科">史学科</option>
+      <option value="国文学科">国文学科</option>
+      <option value="中国語中国文化学科">中国語中国文化学科</option>
+      <option value="英文学科">英文学科</option>
+      <option value="ドイツ文学科">ドイツ文学科</option>
+      <option value="社会学科">社会学科</option>
+      <option value="社会福祉学科">社会福祉学科</option>
+      <option value="教育学科">教育学科</option>
+      <option value="体育学科">体育学科</option>
+      <option value="心理学科">心理学科</option>
+      <option value="地理学科">地理学科</option>
+      <option value="地球科学科">地球科学科</option>
+      <option value="数学科">数学科</option>
+      <option value="情報科学科">情報科学科</option>
+      <option value="物理学科">物理学科</option>
+      <option value="生命科学科">生命科学科</option>
+      <option value="化学科">化学化</option>
+    </select>
+    <p>半期:</p>
+    <select name="halfPeriod" required>
+      <option value="">--</option>
+      <option value="前期">前期</option>
+      <option value="後期">後期</option>
+    </select>
+  </div>
+  <table border="5">
+    <tr>
+      <th></th>
+      <th>月曜</th>
+      <th>火曜</th>
+      <th>水曜</th>
+      <th>木曜</th>
+      <th>金曜</th>
+      <th>土曜</th>
+      <th>集中</th>
+    </tr>
+    <tr>
+      <td>1限</td>
+      <td id="月曜-1">
+      </td>
+      <td id="火曜-1">
+      </td>
+      <td id="水曜-1">
+      </td>
+      <td id="木曜-1">
+      </td>
+      <td id="金曜-1">
+      </td>
+      <td id="土曜-1">
+      </td>
+      <td id="集中-1">
+      </td>
+    </tr>
+    <tr>
+      <td>2限</td>
+      <td id="月曜-2">
+      </td>
+      <td id="火曜-2">
+      </td>
+      <td id="水曜-2">
+      </td>
+      <td id="木曜-2">
+      </td>
+      <td id="金曜-2">
+      </td>
+      <td id="土曜-2">
+      </td>
+    </tr>
+    <tr>
+      <td>3限</td>
+      <td id="月曜-3">
+      </td>
+      <td id="火曜-3">
+      </td>
+      <td id="水曜-3">
+      </td>
+      <td id="木曜-3">
+      </td>
+      <td id="金曜-3">
+      </td>
+      <td id="土曜-3">
+      </td>
+    </tr>
+    <tr>
+      <td>4限</td>
+      <td id="月曜-4">
+      </td>
+      <td id="火曜-4">
+      </td>
+      <td id="水曜-4">
+      </td>
+      <td id="木曜-4">
+      </td>
+      <td id="金曜-4">
+      </td>
+      <td id="土曜-4">
+      </td>
+    </tr>
+    <tr>
+      <td>5限</td>
+      <td id="月曜-5">
+      </td>
+      <td id="火曜-5">
+      </td>
+      <td id="水曜-5">
+      </td>
+      <td id="木曜-5">
+      </td>
+      <td id="金曜-5">
+      </td>
+      <td id="土曜-5">
+      </td>
+    </tr>
+  </table>
+
+  <div id="modal1" class="layer js-modal">
+    <div class="modal">
+      <div class="modal__inner">
+        <div class="modal__button-wrap">
+          <button class="close-button js-close-button">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div class="modal__contents">
+          <div class="modal__content">
+            <form id="courseForm">
+              <label for="grade">学年:</label>
+              <select id="grade" name="grade" required>
+                <option value="">--</option>
+                <option value="1">1年</option>
+                <option value="2">2年</option>
+                <option value="3">3年</option>
+                <option value="4">4年</option>
+              </select>
+      
+              <label for="department">学科:</label>
+              <select id="department" name="department" required>
+                <option value="">--</option>
+                <option value="哲学科">哲学科</option>
+                <option value="史学科">史学科</option>
+                <option value="国文学科">国文学科</option>
+                <option value="中国語中国文化学科">中国語中国文化学科</option>
+                <option value="英文学科">英文学科</option>
+                <option value="ドイツ文学科">ドイツ文学科</option>
+                <option value="社会学科">社会学科</option>
+                <option value="社会福祉学科">社会福祉学科</option>
+                <option value="教育学科">教育学科</option>
+                <option value="体育学科">体育学科</option>
+                <option value="心理学科">心理学科</option>
+                <option value="地理学科">地理学科</option>
+                <option value="地球科学科">地球科学科</option>
+                <option value="数学科">数学科</option>
+                <option value="情報科学科">情報科学科</option>
+                <option value="物理学科">物理学科</option>
+                <option value="生命科学科">生命科学科</option>
+                <option value="化学科">化学化</option>
+              </select>
+      
+              <label for="dayOfWeek">曜日:</label>
+              <select id="dayOfWeek" name="dayOfWeek">
+                <option value="">--</option>
+                <option value="月曜">月曜</option>
+                <option value="火曜">火曜</option>
+                <option value="水曜">水曜</option>
+                <option value="木曜">木曜</option>
+                <option value="金曜">金曜</option>
+                <option value="土曜">土曜</option>
+                <option value="集中">集中</option>
+              </select>
+      
+              <label for="timeSlot">時限:</label>
+              <select id="timeSlot" name="timeSlot">
+                <option value="">--</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+
+              <label for="halfPeriod">半期:</label>
+              <select id="halfPeriod" name="halfPeriod">
+                <option value="">--</option>
+                <option value="前期">前期</option>
+                <option value="後期">後期</option>
+              </select>
+
+              <label for="courseType">履修区分:</label>
+              <select id="courseType" name="courseType" required>
+                <option value="">--</option>
+                <option value="required">必修科目</option>
+                <option value="elective_required">必修選択科目</option>
+                <option value="general">総合科目</option>
+              </select>
+
+              <label for="courseName">講義名:</label>
+              <input type="text" id="courseName" name="courseName" required>
+      
+              <button type="button" id="addNewCourse">追加</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-    <table border="5">
-      <tr>
-        <th></th>
-        <th>月曜</th>
-        <th>火曜</th>
-        <th>水曜</th>
-        <th>木曜</th>
-        <th>金曜</th>
-      </tr>
-      <tr>
-        <td>1限</td>
-        <td id="月曜-1">
-        </td>
-        <td id="火曜-1">
-        </td>
-        <td id="水曜-1">
-        </td>
-        <td id="木曜-1">
-        </td>
-        <td id="金曜-1">
-        </td>
-      </tr>
-      <tr>
-        <td>2限</td>
-        <td id="月曜-2">
-        </td>
-        <td id="火曜-2">
-        </td>
-        <td id="水曜-2">
-        </td>
-        <td id="木曜-2">
-        </td>
-        <td id="金曜-2">
-        </td>
-      </tr>
-      <tr>
-        <td>3限</td>
-        <td id="月曜-3">
-        </td>
-        <td id="火曜-3">
-        </td>
-        <td id="水曜-3">
-        </td>
-        <td id="木曜-3">
-        </td>
-        <td id="金曜-3">
-        </td>
-      </tr>
-      <tr>
-        <td>4限</td>
-        <td id="月曜-4">
-        </td>
-        <td id="火曜-4">
-        </td>
-        <td id="水曜-4">
-        </td>
-        <td id="木曜-4">
-        </td>
-        <td id="金曜-4">
-        </td>
-      </tr>
-      <tr>
-        <td>5限</td>
-        <td id="月曜-5">
-        </td>
-        <td id="火曜-5">
-        </td>
-        <td id="水曜-5">
-        </td>
-        <td id="木曜-5">
-        </td>
-        <td id="金曜-5">
-        </td>
-      </tr>
-    </table>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </div>
+
+  <div id="modal2" class="layer js-modal">
+    <div class="modal">
+      <div class="modal__inner">
+        <div class="modal__button-wrap">
+          <button class="close-button js-close-button">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div class="modal__contents">
+          <div class="modal__content">
+            <p>選択中:</p>
+            <div id="selectedCourse"></div>
+            <button id="deleteCourseButton">削除</button>
+            <select id="courseType-delete">
+              <option value="">--</option>
+              <option value="required">必修科目</option>
+              <option value="elective_required">必修選択科目</option>
+              <option value="general">総合科目</option>
+            </select>
+            <input type="text" id="searchInput" placeholder="講義名">
+            <ul id="searchResults"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dbChangeBtns">
+    <button class="button js-modal-button" data-modal-id="modal1">講義追加</button>
+    <button class="button js-modal-button" data-modal-id="modal2">講義消去</button>
+  </div> 
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
